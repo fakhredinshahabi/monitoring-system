@@ -1,0 +1,10 @@
+@for (item of items; track $index) {
+  <a routerLink="{{ item.link }}">
+    <div class="item-menu" routerLinkActive="active-link">
+      <i class="pi {{ item.icon }}"></i>
+      <span>{{ item.label }}</span>
+    </div>
+  </a>
+}
+
+<button *appHasRole="'ADMIN'">admiiiiiiiin</button>

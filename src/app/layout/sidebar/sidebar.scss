@@ -1,0 +1,22 @@
+a{
+    text-decoration: none;
+  color: black;
+
+}
+.item-menu{
+    display: flex;
+    gap: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 5px ;
+    margin: 5px;
+}:hover{
+    background-color: rgb(228, 227, 227);
+}
+
+
+
+.active-link{
+    background: red !important;
+    color: black;
+
+}

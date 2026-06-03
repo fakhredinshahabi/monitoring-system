@@ -1,0 +1,258 @@
+
+:root {
+  /* ── (Spacing) ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* ──  (Radius) ── */
+  --radius-none: 0;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ──   (Blur) ── */
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+
+  /* ──  (Z-Index) ── */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+  --z-max: 9999;
+
+  /* ──   زمان برای انیمیشن ها ── */
+  --duration-fast: 0.15s;
+  --duration-base: 0.2s;
+  --duration-slow: 0.3s;
+  --transition-colors: background-color var(--duration-base) ease, color var(--duration-base) ease, border-color var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  /*   (Fonts)  */
+  --font-: 'iransans'
+}
+
+ /* اول رنگ ها و مقادیر را تعریف میکنیم در قسمت روت و در قسمت بعد از آن ها برای مقدار دهی متغییر هایی که تعریف کردیم استفاده میکنیم  */
+:root {
+  /* ── primary () ── */
+  --primitive-primary-50: #eff6ff;
+  --primitive-primary-100: #dbeafe;
+  --primitive-primary-200: #bfdbfe;
+  --primitive-primary-300: #93c5fd;
+  --primitive-primary-400: #60a5fa;
+  --primitive-primary-500: #3b82f6;
+  --primitive-primary-600: #2563eb;
+  --primitive-primary-700: #1d4ed8;
+  --primitive-primary-800: #1e40af;
+  --primitive-primary-900: #1e3a8a;
+  --primitive-primary-50: #eff6ff;
+
+
+ /* ──  accent ── */
+
+  --primitive-accent-100: #e8defd;
+  --primitive-accent-200: #d1befb;
+  --primitive-accent-300: #b99dfa;
+  --primitive-accent-400: #a27df8;
+  --primitive-accent-500: #8b5cf6;
+  --primitive-accent-600: #8b5cf6;
+  --primitive-accent-700: #6f4ac5;
+  --primitive-accent-800: #533794;
+  --primitive-accent-900: #1c1231;
+  /* ──  success ── */
+  --primitive-success-50: #f0fdf4;
+  --primitive-success-100: #dcfce7;
+  --primitive-success-200: #bbf7d0;
+  --primitive-success-300: #86efac;
+  --primitive-success-400: #4ade80;
+  --primitive-success-500: #22c55e;
+  --primitive-success-600: #16a34a;
+  --primitive-success-700: #15803d;
+  --primitive-success-800: #166534;
+  --primitive-success-900: #14532d;
+
+  /* ──  warn ── */
+  --primitive-warning-50: #fffbeb;
+  --primitive-warning-100: #fef3c7;
+  --primitive-warning-200: #fde68a;
+  --primitive-warning-300: #fcd34d;
+  --primitive-warning-400: #fbbf24;
+  --primitive-warning-500: #f59e0b;
+  --primitive-warning-600: #d97706;
+  --primitive-warning-700: #b45309;
+  --primitive-warning-800: #92400e;
+  --primitive-warning-900: #78350f;
+
+  /* ──  error ── */
+  --primitive-error-50: #fef2f2;
+  --primitive-error-100: #fee2e2;
+  --primitive-error-200: #fecaca;
+  --primitive-error-300: #fca5a5;
+  --primitive-error-400: #f87171;
+  --primitive-error-500: #ef4444;
+  --primitive-error-600: #dc2626;
+  --primitive-error-700: #b91c1c;
+  --primitive-error-800: #991b1b;
+  --primitive-error-900: #7f1d1d;
+
+  /* ── gray ── */
+  --primitive-neutral-50: #f8fafc;
+  --primitive-neutral-100: #f1f5f9;
+  --primitive-neutral-200: #e2e8f0;
+  --primitive-neutral-300: #cbd5e1;
+  --primitive-neutral-400: #94a3b8;
+  --primitive-neutral-500: #64748b;
+  --primitive-neutral-600: #475569;
+  --primitive-neutral-700: #334155;
+  --primitive-neutral-800: #1e293b;
+  --primitive-neutral-900: #0f172a;
+  --primitive-neutral-950: #020617;
+
+///////////opacity/////////
+  --primitive-neutral-300-opacity-100: #cbd5e1ec;
+    --primitive-neutral-300-opacity-200: #cbd5e1d7;
+      --primitive-neutral-300-opacity-300: #cbd5e1b7;
+        --primitive-neutral-300-opacity-400: #cbd5e196;
+          --primitive-neutral-300-opacity-500: #cbd5e193;
+            --primitive-neutral-300-opacity-600: #cbd5e159;
+              --primitive-neutral-300-opacity-700: #cbd5e138;
+                --primitive-neutral-300-opacity-800: #cbd5e121;
+                  --primitive-neutral-300-opacity-900: #cbd5e115;
+
+
+}
+
+
+:root {
+  /* ── backgrounds ── */
+  --bg-primary: var(--primitive-neutral-50);
+  --bg-secondary: var(--primitive-neutral-100);
+  --bg-elevated: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --bg-disabled: var(--primitive-neutral-200);
+
+  /* ── texts ── */
+  --text-primary: var(--primitive-neutral-900);
+  --text-secondary: var(--primitive-neutral-900);
+  --text-disabled: var(--primitive-neutral-400);
+  --text-inverse: #ffffff;
+  --text-link: var(--primitive-primary-600);
+
+
+  --primary: var(--primitive-primary-600);    /*    رنگ اصلیمون */
+  --primary-hover: var(--primitive-primary-700);
+  --primary-active: var(--primitive-primary-800);
+  --primary-bg: var(--primitive-primary-50);
+  --primary-border: var(--primitive-primary-200);
+
+  --success: var(--primitive-success-600);    /*    رنگ موفق (تایید شد،ارسال شد) */
+  --success-hover: var(--primitive-success-700);
+  --success-bg: var(--primitive-success-50);
+  --text-on-success: #ffffff;
+
+  --warning: var(--primitive-warning-500);   /*    رنگ هشدار (نکات امنیتی و غیره) */
+  --warning-hover: var(--primitive-warning-600);
+  --warning-bg: var(--primitive-warning-50);
+  --text-on-warning: var(--primitive-neutral-900);
+
+  --error: var(--primitive-error-600);/*    رنگ اخطار (حذف موارد و غیره) */
+  --error-hover: var(--primitive-error-700);
+  --error-bg: var(--primitive-error-50);
+  --text-on-error: #ffffff;
+
+  /* ── بردر و فوکوس ── */
+  --border-default: var(--primitive-neutral-200);
+  --border-focus: var(--primitive-primary-400);
+  --border-error: var(--primitive-error-500);
+  --ring-focus: 0 0 0 3px rgba(59, 130, 246, 0.3);
+
+  /* ── سایه‌ها ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* ── افکت شیشه‌ای ── */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-highlight: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+}
+
+---------------------/* تم تاریک  */---------------------------
+[data-theme="dark"] {
+  /* ── پس‌زمینه‌ها ── */
+  --bg-primary: var(--primitive-neutral-900);
+  --bg-secondary: var(--primitive-neutral-800);
+  --bg-elevated: var(--primitive-neutral-700);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-disabled: var(--primitive-neutral-600);
+
+  /* ── متون ── */
+  --text-primary: var(--primitive-neutral-50);
+  --text-secondary: var(--primitive-neutral-900);
+  --text-disabled: var(--primitive-neutral-500);
+  --text-inverse: var(--primitive-neutral-900);
+  --text-link: var(--primitive-primary-400);
+
+  /* کاربرد رنگ اصلیمون */
+  --primary: var(--primitive-primary-400);
+  --primary-hover: var(--primitive-primary-300);
+  --primary-active: var(--primitive-primary-200);
+  --primary-bg: var(--primitive-primary-900);
+  --primary-border: var(--primitive-primary-700);
+
+  --success: var(--primitive-success-400);
+  --success-hover: var(--primitive-success-300);
+  --success-bg: var(--primitive-success-900);
+  --text-on-success: var(--primitive-success-50);
+
+  --warning: var(--primitive-warning-400);
+  --warning-hover: var(--primitive-warning-300);
+  --warning-bg: var(--primitive-warning-900);
+  --text-on-warning: var(--primitive-warning-50);
+
+  --error: var(--primitive-error-400);
+  --error-hover: var(--primitive-error-300);
+  --error-bg: var(--primitive-error-900);
+  --text-on-error: var(--primitive-error-50);
+
+  /* ──  borders  ── */
+  --border-default: var(--primitive-neutral-700);
+  --border-focus: var(--primitive-primary-300);
+  --border-error: var(--primitive-error-400);
+  --ring-focus: 0 0 0 3px rgba(96, 165, 250, 0.4);
+
+  /* ── سایه‌ها ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* ──  شیشه ای ── */
+  --glass-bg: rgba(15, 23, 42, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* ترنزیشن ها */
+.theme-transition,
+.theme-transition * {
+  transition: var(--transition-colors);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition,
+  .theme-transition * { transition: none !important; }
+}

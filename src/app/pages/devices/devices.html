@@ -1,0 +1,9 @@
+@for (device of devices$ | async; track $index) {
+  <div style="display: flex; margin: 2rem">
+    <button (click)="showItem(device.id)">{{ device.name }}</button>
+    <br />
+    {{ device.status }}
+    <br />
+  </div>
+}
+<router-outlet></router-outlet>

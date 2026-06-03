@@ -1,0 +1,19 @@
+<section class="container">
+  <div #mapContainer class="map-container"></div>
+  <div class="right-dashboard">
+    <div class="charts">
+      <p-chart type="doughnut" [data]="chartData" [options]="chartOptions" />
+      <p-chart type="pie" [data]="chartData" [options]="chartOptions" />
+      <p-chart type="polarArea" [data]="chartData" [options]="chartOptions" />
+    </div>
+  </div>
+
+  <div class="statistics">
+    @for (card of Statistics; track $index) {
+      <section class="statistics-card">
+        <h2>{{ card.titr }}</h2>
+        <span>{{ card.number }}</span>
+      </section>
+    }
+  </div>
+</section>

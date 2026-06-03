@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.status{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    top: 30px;
+    right: 34px;
+}
+.profile{
+    position: relative;
+}
+.p-inputgroup{
+    width: auto;
+}
+.righ-headr{
+display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items:center;
+}

@@ -1,0 +1,48 @@
+<form [formGroup]="registerForm" class="form-register" (submit)="register()">
+  <h2>Registry</h2>
+  <div class="form-feildes">
+    <div class="flex flex-col gap-1">
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <i class="pi pi-user"></i>
+        </p-inputgroup-addon>
+        <input
+          pInputText
+          placeholder="Email or PhonNumber"
+          formControlName="email"
+        />
+      </p-inputgroup>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <p-inputgroup>
+        <p-inputgroup-addon><i class="pi pi-lock"></i></p-inputgroup-addon>
+        <p-password
+          [feedback]="true"
+          [toggleMask]="true"
+          autocomplete="off"
+          formControlName="password"
+          placeholder="password"
+        />
+      </p-inputgroup>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <p-inputgroup>
+        <p-inputgroup-addon><i class="pi pi-lock"></i></p-inputgroup-addon>
+        <p-password
+          [feedback]="false"
+          [toggleMask]="true"
+          autocomplete="off"
+          formControlName="rePassword"
+          placeholder="rePassword"
+        />
+      </p-inputgroup>
+    </div>
+  </div>
+  <div>
+    <p-button label="register" [loading]="loading()" type="submit" />
+  </div>
+</form>
+<div class="card flex justify-center -m-1"></div>
+<p>Don't have an account? <a routerLink="/">Login </a></p>
