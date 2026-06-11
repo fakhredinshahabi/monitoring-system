@@ -5,6 +5,5 @@ import { Tokenservice } from '../services/tokenservice/tokenservice';
 export const adminGuard: CanActivateFn = (route, state) => {
   const token = inject(Tokenservice);
   const router = inject(Router);
-
-  return token.isAdmin() ? true : router.createUrlTree(['/login']);
+   return token.isAdmin() ? true : router.createUrlTree(['/login']);
 };

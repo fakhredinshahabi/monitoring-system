@@ -19,11 +19,11 @@ export class HasRoleDirective {
   // ✅ استفاده از Setter به جای کانستراکتور
   @Input('appHasRole')
   set role(requiredRole: string) {
-    const payload = this.tokenSvc.getPayload();
-    if (payload?.role === requiredRole) {
-      this.vcr.createEmbeddedView(this.tpl);
-    } else {
-      this.vcr.clear();
-    }
+    const payload = this.tokenSvc.getPaylod();
+    // if (payload?.role === requiredRole) {
+    //   this.vcr.createEmbeddedView(this.tpl);
+    // } else {
+    //   this.vcr.clear();
+    // }
   }
 }

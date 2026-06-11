@@ -9,9 +9,6 @@ import { authGuard } from './core/guard/auth-guard-guard';
 import { Devices } from './pages/devices/devices';
 import { Users } from './pages/users/users';
 import { adminGuard } from './core/guard/admin-guard';
-import { redirectFromLoginGuard } from './core/guard/redirect-from-login-guard';
-import { Device } from './pages/devices/device/device';
-import { Component } from '@angular/core';
 import { Upload } from './pages/upload/upload';
 export const routes: Routes = [
   {

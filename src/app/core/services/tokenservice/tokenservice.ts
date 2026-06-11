@@ -1,53 +1,63 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
-import { _AccessToken } from '../../interfaces/auth.interface';
+import { Observable } from 'rxjs/internal/Observable';
+import { ErrorHandlingService } from '../Error/error-handeling';
+import { HttpClient } from '@angular/common/http';
+import {token} from '../../interfaces/token.interface';
 @Injectable({
   providedIn: 'root',
 })
 export class Tokenservice {
-  private readonly ACCESS_TOKEN_KEY = 'access_token';
-  private readonly REFRESH_TOKEN_KEY = 'refresh_token';
-  saveTokens(accessToken: string, refreshToken: string): void {
+  private erorService = inject(ErrorHandlingService);
+  private http = inject(HttpClient);
+  private readonly ACCESS_TOKEN_KEY = 'access-token';
+  private readonly REFRESH_TOKEN_KEY = 'refresh-token';
+  constructor() {}
+  saveTokens(accessToken: string, refreshToken: string) {
     localStorage.setItem(this.ACCESS_TOKEN_KEY, accessToken);
     localStorage.setItem(this.REFRESH_TOKEN_KEY, refreshToken);
   }
-  removeToken() {
-    localStorage.removeItem(this.ACCESS_TOKEN_KEY);
-    localStorage.removeItem(this.REFRESH_TOKEN_KEY);
-  }
-  constructor() {}
-  getPayload(): _AccessToken | null {
-    const payload = this.getAccessToken();
-    if (!payload) return null;
-    try {
-      return jwtDecode(payload);
-    } catch (err) {
-      console.log('adam dastresi', err);
-      return null;
-    }
-  }
-  isAdmin() {
-    return this.getPayload()!.role === 'ADMIN';
-  }
-  /////////////////////refreshToken//////////////////////////////////
-  getRefreshToken(): string | null {
-    return localStorage.getItem(this.REFRESH_TOKEN_KEY);
-  }
-  removeRefreshToken(): void {
-    localStorage.removeItem(this.REFRESH_TOKEN_KEY);
-  }
-
-  //////////////////accessToken//////////////////////////
-
   getAccessToken(): string | null {
     return localStorage.getItem(this.ACCESS_TOKEN_KEY);
   }
-  cleanAccessToken(): void {
+  getRefreshToken(): string | null {
+    return localStorage.getItem(this.REFRESH_TOKEN_KEY);
+  }
+  clearTokens() {
+    localStorage.removeItem(this.REFRESH_TOKEN_KEY);
     localStorage.removeItem(this.ACCESS_TOKEN_KEY);
   }
-
-  ////////////////////////////checkLogin///////////////////
   isLoggedIn(): boolean {
-    return !!this.getRefreshToken() && !!this.getAccessToken();
+    return !!this.getAccessToken() && !!this.getRefreshToken();
   }
+
+  getPaylod():token|null {
+    let payload = this.getAccessToken();
+    if (payload) {
+      try {
+        console.log(jwtDecode(payload));
+        return jwtDecode(payload);
+
+      } catch (err) {
+         this.erorService.mapError(err);
+        return null
+      }
+    }
+    return null;
+  }
+  isTokenExpired() {
+    const payload = this.getPaylod();
+    if (!payload || !payload.exp) {
+      return true;
+    }
+    let currentTime = Date.now() / 1000;
+    return payload.exp < currentTime;
+  }
+  isAdmin():boolean {
+  return   this.getPaylod()?.role==="ADMIN"
+  }
+    hasRole(roleName:string){
+    return this.getPaylod()?.role ===roleName
+    }
+
 }

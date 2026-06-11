@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { Footer } from './footer/footer';
 import { Sidebar } from './sidebar/sidebar';
 import { Main } from './main/main';
-import { Heder } from './heder/heder';
+import { Header } from './header/header';
+import {Tokenservice} from '../core/services/tokenservice/tokenservice';
 
 @Component({
   selector: 'app-layout',
-  imports: [Footer, Sidebar, Main, Heder],
+  imports: [Footer, Sidebar, Main, Header],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })
-export class Layout {}
+export class Layout {
+  private tokenServics=inject(Tokenservice)
+  ngOnInit() {
+    this.tokenServics.getPaylod()
+    console.log(111)
+  }
+}

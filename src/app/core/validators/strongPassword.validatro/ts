@@ -1,9 +1,0 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
-export const strongPassword = (
-  control: AbstractControl,
-): ValidationErrors | null => {
-  const password = control.value;
-  if (!password) return null;
-  const hasE = /[E]/.test(password);
-  return hasE ? null : { paswworddosenthase: true };
-};

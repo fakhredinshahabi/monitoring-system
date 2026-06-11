@@ -28,10 +28,10 @@ import { Tokenservice } from '../../core/services/tokenservice/tokenservice';
     DialogModule,
     InputTextModule,
   ],
-  templateUrl: './heder.html',
-  styleUrl: './heder.scss',
+  templateUrl: './header.html',
+  styleUrl: './header.scss',
 })
-export class Heder {
+export class Header {
   @Output() open = new EventEmitter<boolean>();
   private http = inject(Authservice);
   private router = inject(Router);
@@ -44,7 +44,7 @@ export class Heder {
             ['/login'],
             // , { replaceUrl: true }
           );
-          this.token.removeToken();
+          this.token.clearTokens();
         }
       },
     });

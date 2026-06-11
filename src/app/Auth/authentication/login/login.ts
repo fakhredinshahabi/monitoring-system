@@ -21,7 +21,7 @@ import {
 import { HttpErrorResponse } from '@angular/common/http';
 import { Authservice } from '../../../core/services/auth/authservice';
 import { Tokenservice } from '../../../core/services/tokenservice/tokenservice';
-import { NotificationService } from '../../../core/services/nofication/notificationService';
+import { NotificationService } from '../../../core/services/notification/notificationService';
 @Component({
   selector: 'app-login',
   imports: [
